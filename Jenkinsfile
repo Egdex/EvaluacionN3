@@ -19,7 +19,7 @@ pipeline {
 
         stage('Prueba de Seguridad') {
             steps {
-                sh 'docker run --rm --network host softwaresecuritydotorg/zap-stable zap-baseline.py -t http://localhost:5001 || true'
+                sh 'docker run --rm --network host zaproxy/zap-stable zap-baseline.py -t http://localhost:5001 || true'
             }
         }
     }
